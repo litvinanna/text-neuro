@@ -1,0 +1,21 @@
+
+
+\begin{tikzpicture}
+	\ohe{0}{0.3}{3}
+	\flattenout{0}{-0.9}{24}
+	\out{0}{-1.6}	
+	
+	\def\x{4}
+	\node (a) at (\x, -0) {двумерные данные};
+	\node (a) at (\x, -1) {одномерные данные};
+	\node (a) at (\x, -2) {выходные вероятности};
+	
+	\def\x{8}
+	\draw (\x, 0) circle (0.4);
+	\node[cnn] (x) at (\x, -1) {c};
+	
+	\def\x{12}
+	\node (a) at (\x, 0) {полносвязный нейрон};
+	\node (a) at (\x, -1) {сверточный нейрон};
+
+\end{tikzpicture}

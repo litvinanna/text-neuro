@@ -1,0 +1,104 @@
+%-------------------BASICS-------------------
+\documentclass[oneside,final,12pt]{article} %одностороння печать, чистовая версия, размер кегля, класс документа
+\usepackage{ucs} 
+\usepackage[utf8x]{inputenc} 
+\usepackage[T2A, T1]{fontenc} 
+\usepackage[english,russian]{babel} %оформление кириллицей (подписи к таблицам и т.д.)
+\usepackage{ifpdf}
+\ifpdf  %% если используется pdfTEX
+\usepackage{cmap}  %поиск по кириллице в готовом pdf
+\usepackage[pdftex]{graphicx} %работа с графикой 
+\usepackage[unicode=true]{hyperref}
+\usepackage{pdfpages}
+\else   %% если используется не pdfTEX
+\usepackage[dvips]{graphicx}
+\fi
+\usepackage{verbatim} %comments
+\setcounter{tocdepth}{2} % глубина содержания
+ 
+ 
+%-------------------FORMAT-------------------
+\usepackage{vmargin} %размеры полос набора
+\setpapersize{A4} %формат бумаги
+\setmarginsrb{20mm}{20mm}{20mm}{20mm}{0pt}{0mm}{0pt}{13mm} %размеры полей: левое, верхнее, правое, нижнее, 3*колонтитулы, расстояние между нижним краем нижней строки и нижним краем номера страницы
+\usepackage{indentfirst} %красная строка для первого абзаца главы или параграфа
+\setlength{\parindent}{0cm} % отступ красной строки
+\setlength{\parskip}{2mm}
+\sloppy %борьба с залезанием строк на поля путём изменения размеров пробелов
+\pagestyle{plain} %включена нумерация страниц 
+\renewcommand{\thesection}{\arabic{section}}  %арабская нумерация глав
+\usepackage{lineno} %нумерация всех строк для отладки
+\usepackage{enumitem} %особенности enumerate
+\usepackage{textgreek} % \textalpha греческие буквы не в math mode
+\usepackage{setspace} %for setstretch
+\usepackage{adjustbox}
+\usepackage{rotating}
+\usepackage{lscape} 
+
+%-------------------TABLES, FIGURES-------------------
+\usepackage{float} %для плавающих картинок и таблиц
+%\usepackage{wrapfig} %для плавающих картинок.
+\usepackage[font=small]{caption}
+\usepackage{booktabs} %отступы в tabular
+\usepackage{colortbl} %раскаршивание таблиц
+\usepackage{xcolor} %название цветов
+\newcommand{\red}[1]{\textcolor{red}{#1}} % выделение красным текста командой \red{}
+
+\definecolor{dark-dark-gray}{gray}{0.3}
+\newcommand{\gray}[1]{\textcolor{dark-dark-gray}{#1}}
+\definecolor{dark-gray}{gray}{0.4}
+\newcommand{\graytable}[0]{\arrayrulecolor{dark-gray}}
+\newcommand{\thinrule}[0]{\specialrule{0.3pt}{4pt}{4pt}}
+\newcommand{\verythinrule}[0]{\specialrule{0.1pt}{1pt}{1pt}}
+\newcommand{\invisiblerule}[0]{\specialrule{0pt}{2pt}{2pt}}
+
+\usepackage{pbox} % для переносов внутри ячейки таблицы
+\usepackage{array} %??
+\usepackage{longtable}% перенос таблиц на страницах
+\usepackage{subcaption} % несколько картинок в одной
+\usepackage{multirow} % объединение ячеек
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+\usepackage{tabu}
+
+\usepackage{caption}
+\captionsetup{%
+    ,format=hang
+    ,justification=raggedright
+    ,singlelinecheck=false
+    ,figureposition=bottom
+    }
+
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric,shapes.arrows,decorations.pathmorphing}
+\usetikzlibrary{matrix,chains,scopes,positioning,arrows,fit}
+
+
+%-------------------MATH-------------------
+\usepackage{amsmath} %дополнительные средства для вёрстки формул
+\everymath{\displaystyle}
+\usepackage{breqn} %для dmath разбить длинную формулу
+%\usepackage{esvect} %vectors
+
+%\usepackage{amscd} %диаграммы
+\usepackage{amsfonts} %дополнительные шрифты для формул
+\usepackage{amssymb} %дополнительные символы для формул
+
+%-------------------BIBLIOGRAPHY-------------------
+\usepackage{cite}
+\usepackage[nottoc,notlot,notlof]{tocbibind}
+
+
+\begin{document}
+		%\linenumbers
+		\input{tables/ann}
+%        \include{titlepage} \newpage
+%        \tableofcontents \newpage
+        %\include{abbreviations} \newpage
+%        \include{introduction}
+        \include{literature}
+        \include{methods}
+        \include{results} \newpage
+%        \include{templates}
+        \footnotesize \bibliographystyle{mybib1.bst}  % стилевой файл для оформления по ГОСТу  utf8gost705u, ieeetr для курсовой, cell  -- черновик
+        \bibliography{bib.bib}
+\end{document}

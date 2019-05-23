@@ -1,0 +1,48 @@
+\tikzstyle{line}=[thick, ->]
+\tikzstyle{dnn}=[draw, circle, minimum width=1cm]
+
+\newcommand{\ohe}[3]{
+	\def\step{0.2}
+	\def\hlen{#3}
+	\foreach \x in {0,...,4}
+	\draw[] (#1-\hlen*\step, #2-\step*\x) -- (#1+\hlen*\step,#2-\step*\x);
+	
+	\foreach \x in {-\hlen,...,\hlen}
+		\draw (#1-\step*\x, #2) -- (#1-\step*\x, #2-4*\step); 
+	}
+	
+\newcommand{\oherandom}[4]{
+	\def\step{0.2}
+	\def\len{#3}
+	\def\depth{#4}
+	\foreach \x in {0,...,\depth}
+	\draw[] (#1-\len*\step*0.5, #2-\step*\x) -- (#1+\len*\step*0.5, #2-\step*\x);
+	
+	\foreach \x in {0,...,\len}
+		\draw (#1+\step*\x-\len*\step*0.5, #2) -- (#1+\step*\x - \len*\step*0.5, #2-\depth*\step); 
+	}	
+	
+	
+\newcommand{\flattenout}[3]{
+	\def\step{0.1}
+	\def\lenflat{#3}
+	
+	\foreach \x in {0, 1}
+	\draw[] (#1-\lenflat*\step*0.5, #2-\step*\x) -- (#1+\lenflat*\step*0.5,#2-\step*\x);
+	\foreach \x in {0,...,\lenflat}
+		\draw (#1+\step*\x -\lenflat*\step*0.5, #2) -- (#1+\step*\x -\lenflat*\step*0.5, #2-\step);
+	}
+
+\newcommand{\out}[2]{
+	\def\step{0.5}
+	\foreach \x in {0, 1}
+		\draw[] (#1-\step*2, #2-\step*\x) -- (#1+\step*2,#2-\step*\x);
+	\foreach \x in {-2,...,2}
+		\draw (#1+\step*\x, #2) -- (#1+\step*\x, #2-\step); 
+	\node[inner sep=0] (out0) at (#1-1.5*\step, #2) {};
+	\node[inner sep=0] (out1) at (#1-0.5*\step, #2) {};
+	\node[inner sep=0] (out2) at (#1+0.5*\step, #2) {};
+	\node[inner sep=0] (out3) at (#1+1.5*\step, #2) {};
+}
+
+\tikzstyle{cnn}=[draw, rectangle, minimum height=2em, minimum width = 0.8em]	

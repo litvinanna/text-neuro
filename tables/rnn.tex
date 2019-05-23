@@ -1,0 +1,18 @@
+\begin{tikzpicture}
+	\oherandom{0}{1}{12}{4}
+	\out{0}{-5.5}
+	\draw[line](0, 0) -- (0, -1);
+	\draw (-2,-2) rectangle (2, -1);
+	\node (x) at (0, -1.5) {LSTM};
+	\draw[line] (-2, -1.5) -- (-2.5, -1.5) -- (-2.5, -0.5) -- (2.5, -0.5) -- (2.5, -1.5) -- (2, -1.5) ;
+	\draw[line](0, -2) -- (0, -2.5);
+	
+	\oherandom{0}{-2.5}{12}{1}
+	\node (x) at (2.5, -2.5) {hidden states output};
+	
+	\foreach \x in {0, ..., 3}{
+		\draw[line] (\x-1.5, -3) -- (\x-1.5,-3.5);
+		\draw (\x-1.5, -4) circle (0.4);
+		\draw[line] (\x-1.5, -4.5) -- (out\x);
+		}
+\end{tikzpicture}

@@ -1,0 +1,8 @@
+\begin{figure}[h] % picture
+	\centering
+	\includegraphics[width = 0.6\textwidth]{pics/cnn_models_all_runs_p1_ecoli_100000_10000_all_0.png}
+	\caption{{\bfseries Сравнение сверточных моделей.} \\*
+	По горизонтальной оси отмечены разные конфигурации сверточного слоя в нейронной сети. 
+		\\   \mannwhitni }
+	\label{fig:cnn_test}	
+\end{figure}
