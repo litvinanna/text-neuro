@@ -1,8 +1,18 @@
-\begin{figure}[h] % picture
+\begin{figure*}[h] % picture
 	\centering
-	\includegraphics[width = 0.6\textwidth]{pics/cnn_models_all_runs_p1_ecoli_100000_10000_all_0.png}
+	\begin{subfigure}[b]{0.7\linewidth}
+		\includegraphics[width=\textwidth]{pics/cnn_models_all_runs_p1_ecoli_100000_10000_all_0.png}
+			\caption{sd}\label{fig:cnn_test}	
+	\end{subfigure}
+	
+	\begin{subfigure}[b]{0.7\linewidth}
+		\includegraphics[width=\textwidth]{pics/cnn_models_4_5.png}
+		\caption{skf} \label{fig:cnn_test}	
+	\end{subfigure}
+	
 	\caption{{\bfseries Сравнение сверточных моделей.} \\*
 	По горизонтальной оси отмечены разные конфигурации сверточного слоя в нейронной сети. 
 		\\   \mannwhitni }
-	\label{fig:cnn_test}	
-\end{figure}
+\end{figure*}
+
+ 
