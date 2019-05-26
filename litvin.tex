@@ -22,7 +22,7 @@
 \setpapersize{A4} %формат бумаги
 \setmarginsrb{20mm}{20mm}{20mm}{20mm}{0pt}{0mm}{0pt}{13mm} %размеры полей: левое, верхнее, правое, нижнее, 3*колонтитулы, расстояние между нижним краем нижней строки и нижним краем номера страницы
 \usepackage{indentfirst} %красная строка для первого абзаца главы или параграфа
-\setlength{\parindent}{0cm} % отступ красной строки
+\setlength{\parindent}{1cm} % отступ красной строки
 \setlength{\parskip}{2mm}
 \sloppy %борьба с залезанием строк на поля путём изменения размеров пробелов
 \pagestyle{plain} %включена нумерация страниц 
@@ -37,7 +37,7 @@
 
 %-------------------TABLES, FIGURES-------------------
 \usepackage{float} %для плавающих картинок и таблиц
-%\usepackage{wrapfig} %для плавающих картинок.
+\usepackage{wrapfig} %для плавающих картинок.
 \usepackage[font=small]{caption}
 \usepackage{booktabs} %отступы в tabular
 \usepackage{colortbl} %раскаршивание таблиц
@@ -72,6 +72,13 @@
 \usetikzlibrary{shapes.geometric,shapes.arrows,decorations.pathmorphing}
 \usetikzlibrary{matrix,chains,scopes,positioning,arrows,fit}
 
+\usetikzlibrary{arrows.meta}
+\usepackage{tikzscale}
+
+% used to avoid putting the same thing several times...
+% Command \empt{var1}{var2}
+\newcommand{\empt}[2]{$#1^{\langle #2 \rangle}$}
+\newcommand{\tr}[2]{#1^{\langle #2 \rangle}}
 
 %-------------------MATH-------------------
 \usepackage{amsmath} %дополнительные средства для вёрстки формул

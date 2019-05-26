@@ -47,13 +47,27 @@
 	(a) Минимальный размер фильтра $3\times4$ был выбран исходя из кодонной структуры б\'{о}льшей кодирующей части генома. \\  (b) Размер фильтра в сверточном слое может быть увеличен до $6\times4$, вследствие чего уменьшается размерность выхода и число параметров модели. \\ (c) Шаг сверточного фильтра может быть увеличен до 3, что может имитировать распознавание кодонной тринуклеотидной структуры кодирующих частей генома.
 	}
 
-	
 	\label{fig:cnn_schemes}	
 \end{figure*}
+%
+%\begin{figure*}[h] % picture
+%	\centering
+%	\begin{subfigure}[t]{0.4\textwidth}
+%		\input{tables/rnn.tex}
+%	\caption{} \label{fig:rnn}
+%	\end{subfigure}
+%	\begin{subfigure}[t]{0.5\textwidth}
+%		\input{tables/lstm.tex}
+%	\caption{} \label{fig:lstm}
+%	\end{subfigure}
+%	\caption{{\bfseries Архитектура рекуррентной модели.} \\* }
+%	\label{fig:rnn_scheme}	
+%\end{figure*}
 
-\begin{figure}[h] % picture
+
+\begin{figure}
 	\centering
 	\input{tables/rnn.tex}
 	\caption{{\bfseries Архитектура рекуррентной модели.} \\* }
-	\label{fig:rnn_scheme}	
+	\label{fig:rnn_scheme}
 \end{figure}
